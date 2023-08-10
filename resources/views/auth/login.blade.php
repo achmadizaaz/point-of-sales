@@ -48,7 +48,7 @@
                 @endif
 
                 <x-button class="ml-3">
-                    {{ __('Log in') }}
+                    {{ __('Log in') }} <i class="bi bi-wallet2"></i>
                 </x-button>
             </div>
         </form>
