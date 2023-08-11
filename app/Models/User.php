@@ -11,7 +11,7 @@ use Cviebrock\EloquentSluggable\Sluggable;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable, Sluggable;
+    use HasApiTokens, HasFactory, Notifiable,  Sluggable;
 
     /**
      * The attributes that are mass assignable.
@@ -19,9 +19,15 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
+        'username',
         'name',
         'email',
+        'slug',
         'password',
+        'password_default',
+        'is_active',
+        'last_login_at',
+        'last_login_ip',
     ];
 
     /**
@@ -52,9 +58,11 @@ class User extends Authenticatable
     {
         return [
             'slug' => [
-                'source' => 'name'
+                'source' => 'username'
             ]
         ];
     }
 
+
+    // END USER MODEL
 }
