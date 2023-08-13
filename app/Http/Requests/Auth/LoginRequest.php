@@ -50,7 +50,7 @@ class LoginRequest extends FormRequest
         : 'username';
 
         $this->merge([
-            $loginType => $this->input('login')
+            $loginType => $this->input('username')
         ]);
 
 
